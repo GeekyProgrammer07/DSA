@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#ifndef LINKEDLIST_LIB
+#define LINKEDLIST_LIB
 class Node
 {
     int data;
@@ -13,16 +15,6 @@ public:
         this->next = NULL;
     }
 
-    ~Node()
-    {
-        if (next != NULL)
-        {
-            delete next;
-            next = NULL;
-        }
-    }
-
-    // This is a getter function as data is a private member
     int getData()
     {
         return this->data;
@@ -49,13 +41,45 @@ public:
         tail = NULL;
     }
 
+    List(const List &) = delete;
+    List &operator=(const List &) = delete;
+
+    List(List &&other) noexcept
+        : head(other.head), tail(other.tail)
+    {
+        other.head = other.tail = NULL;
+    }
+
+    List &operator=(List &&other) noexcept
+    {
+        if (this != &other)
+        {
+            // free current nodes
+            Node *curr = head;
+            while (curr != NULL)
+            {
+                Node *nextNode = curr->getNext();
+                delete curr;
+                curr = nextNode;
+            }
+            // steal
+            head = other.head;
+            tail = other.tail;
+            other.head = other.tail = NULL;
+        }
+        return *this;
+    }
+
     ~List()
     {
-        if (head != NULL)
+        Node *curr = head;
+        while (curr != NULL)
         {
-            delete head;
-            head = NULL;
+            Node *nextNode = curr->getNext();
+            delete curr;
+            curr = nextNode;
         }
+        head = tail = NULL;
     }
 
     Node *getHead()
@@ -207,7 +231,9 @@ public:
         cout << endl;
     }
 };
+#endif
 
+#ifndef LINKEDLIST_MAIN
 int main()
 {
     List ll;
@@ -235,3 +261,4 @@ int main()
     cout << "5 is at index: " << ll.search_ll(ll.getHead(), 5) << endl;
     return 0;
 }
+#endif
