@@ -1,5 +1,13 @@
-a.exe
-a.out
-a
-.vscode
+# Ignore everything
+*
+
+# Allow directories
+!*/
+
+# Allow source files
+!*.cpp
+!*.h
+
+# Re-ignore test files
 test.cpp
+**/test.cpp
