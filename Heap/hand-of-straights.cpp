@@ -6,7 +6,6 @@ class Solution
 public:
     bool isNStraightHand(vector<int> &hand, int groupSize)
     {
-        // TODO: implement your logic here
         if (hand.size() % groupSize != 0)
         {
             return false;

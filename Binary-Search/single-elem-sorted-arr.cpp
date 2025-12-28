@@ -6,7 +6,6 @@ class Solution
 public:
     int singleNonDuplicate(vector<int> &nums)
     {
-        // TODO: implement your logic here
         int low = 0, high = nums.size() - 1;
         while (low <= high)
         {

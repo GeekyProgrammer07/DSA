@@ -6,7 +6,6 @@ class Solution
 public:
     int subarraySum(vector<int> &nums, int k)
     {
-        // TODO: implement your logic here
         map<int, int> mp;
         mp[0] = 1;
         int count = 0, sum = 0;

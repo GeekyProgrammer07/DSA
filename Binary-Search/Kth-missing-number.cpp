@@ -6,7 +6,6 @@ class Solution
 public:
     int findKthPositive(vector<int> &arr, int k)
     {
-        // TODO: implement your logic here
         int low = 0, high = arr.size() - 1;
         while (low <= high)
         {

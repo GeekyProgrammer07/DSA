@@ -15,7 +15,6 @@ public:
     }
     int smallestDivisor(vector<int> &nums, int threshold)
     {
-        // TODO: implement your logic here
         vector<int> possible_divisors;
         int low = 1, high = *max_element(nums.begin(), nums.end());
 

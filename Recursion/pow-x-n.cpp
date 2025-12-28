@@ -6,7 +6,6 @@ class Solution
 public:
     long double myPow(double x, long long n)
     {
-        // TODO: implement your logic here
         if (n == 0)
             return 1;
         if (n < 0)

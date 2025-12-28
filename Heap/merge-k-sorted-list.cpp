@@ -15,7 +15,6 @@ class Solution
 public:
     ListNode *mergeKLists(vector<ListNode *> &lists)
     {
-        // TODO: implement your logic here
         priority_queue<
             pair<int, ListNode *>,
             vector<pair<int, ListNode *>>,

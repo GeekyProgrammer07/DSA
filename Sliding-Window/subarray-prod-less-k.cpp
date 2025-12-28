@@ -6,7 +6,6 @@ class Solution
 public:
     int numSubarrayProductLessThanK(vector<int> &nums, int k)
     {
-        // TODO: implement your logic here
         if (k <= 1)
         {
             return 0;

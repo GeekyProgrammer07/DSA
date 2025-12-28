@@ -11,3 +11,6 @@
 # Re-ignore test files
 test.cpp
 **/test.cpp
+
+# Ignore Revision folder
+/Revision/
